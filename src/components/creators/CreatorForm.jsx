@@ -15,7 +15,7 @@ const initialFormData = {
     instagram: "",
     youtube: "",
     twitter: "",
-    tiktok: "",
+    facebook: "",
   },
   specialties: [],
 };
@@ -253,12 +253,12 @@ const CreatorForm = ({ onSubmit, loading, initialData, onCancel }) => {
               placeholder="https://twitter.com/username"
             />
             <Input
-              label="TikTok"
-              value={formData.socialLinks.tiktok}
+              label="Facebook"
+              value={formData.socialLinks.facebook}
               onChange={(e) =>
-                handleNestedChange("socialLinks", "tiktok", e.target.value)
+                handleNestedChange("socialLinks", "facebook", e.target.value)
               }
-              placeholder="https://tiktok.com/username"
+              placeholder="https://facebook.com/username"
             />
           </div>
         </div>
