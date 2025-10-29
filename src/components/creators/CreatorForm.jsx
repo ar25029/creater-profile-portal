@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "../../hooks/useForm";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
@@ -31,6 +31,7 @@ const CreatorForm = ({ onSubmit, loading, initialData, onCancel }) => {
   } = useForm(initialData || initialFormData);
 
   const [specialtyInput, setSpecialtyInput] = useState("");
+  const specialtyInputRef = useRef(null);
 
   const validateForm = () => {
     const newErrors = {};
@@ -74,6 +75,7 @@ const CreatorForm = ({ onSubmit, loading, initialData, onCancel }) => {
         specialties: [...(prev.specialties || []), specialtyInput.trim()],
       }));
       setSpecialtyInput("");
+      specialtyInputRef.current?.focus();
     }
   };
 
@@ -269,6 +271,7 @@ const CreatorForm = ({ onSubmit, loading, initialData, onCancel }) => {
           </h3>
           <div className="flex gap-2 mb-3">
             <Input
+              ref={specialtyInputRef}
               value={specialtyInput}
               onChange={(e) => setSpecialtyInput(e.target.value)}
               placeholder="Add a specialty"
