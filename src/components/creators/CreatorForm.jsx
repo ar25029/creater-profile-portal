@@ -152,7 +152,7 @@ const CreatorForm = ({ onSubmit, loading, initialData, onCancel }) => {
           />
         </div>
 
-        <div>
+        {/* <div>
           <h3 className="text-lg font-semibold text-gray-900 mb-4">
             Profile Images
           </h3>
@@ -223,7 +223,7 @@ const CreatorForm = ({ onSubmit, loading, initialData, onCancel }) => {
               )}
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div>
           <h3 className="text-lg font-semibold text-gray-900 mb-4">
